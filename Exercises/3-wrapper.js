@@ -11,9 +11,8 @@ const contract = (fn, ...types) => (...args) => {
   const res = fn(...args);
   if (typeof res !== types.pop().name.toLowerCase()) {
     throw new TypeError('expected different result type');
-    } else {
-        return res;
-    }
+  } else return res;
+
 };
 
 module.exports = { contract };
